@@ -62,6 +62,7 @@ BOARD_VENDOR_CMDLINE := console=ttyMSM0,115200n8 \
         cgroup.memory=nokmem,nosocket \
         reboot=panic_warm \
         androidboot.selinux=permissive
+BOARD_KERNEL_CMDLINE += androidboot.fastboot=1 twrpfastboot=1
 BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
 TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/$(BOARD_KERNEL_IMAGE_NAME)
 BOARD_PREBUILT_DTBOIMAGE := $(DEVICE_PATH)/prebuilt/dtbo.img
