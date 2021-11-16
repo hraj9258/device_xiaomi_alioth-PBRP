@@ -22,6 +22,11 @@ PRODUCT_PACKAGES += \
     qcom_decrypt \
     qcom_decrypt_fbe
 
+PRODUCT_PACKAGES += \
+    android.hardware.boot@1.1-impl-qti \
+    android.hardware.boot@1.1-service \
+    bootctrl.kona    
+    
 TARGET_RECOVERY_DEVICE_MODULES += libion \
     libandroidicu \
     vendor.display.config@1.0 \
