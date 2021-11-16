@@ -58,11 +58,10 @@ BOARD_VENDOR_CMDLINE := console=ttyMSM0,115200n8 \
         service_locator.enable=1 \
         androidboot.usbcontroller=a600000.dwc3 \
         swiotlb=2048 \
-        loop.max_part=7 \
         cgroup.memory=nokmem,nosocket \
         reboot=panic_warm \
         androidboot.selinux=permissive
-BOARD_KERNEL_CMDLINE += androidboot.fastboot=1 twrpfastboot=1
+BOARD_VENDOR_CMDLINE += androidboot.fastboot=1 twrpfastboot=1
 BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
 TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/$(BOARD_KERNEL_IMAGE_NAME)
 BOARD_PREBUILT_DTBOIMAGE := $(DEVICE_PATH)/prebuilt/dtbo.img
@@ -74,6 +73,7 @@ BOARD_RAMDISK_OFFSET := 0x01000000
 BOARD_TAGS_OFFSET    := 0x00000100
 BOARD_BOOT_HEADER_VERSION := 3
 BOARD_MKBOOTIMG_ARGS += --pagesize $(BOARD_KERNEL_PAGESIZE)
+BOARD_MKBOOTIMG_ARGS += --vendor_cmdline $(BOARD_VENDOR_CMDLINE)
 BOARD_MKBOOTIMG_ARGS += --ramdisk_offset $(BOARD_RAMDISK_OFFSET)
 BOARD_MKBOOTIMG_ARGS += --kernel_offset $(BOARD_KERNEL_OFFSET)
 BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
